@@ -1,71 +1,66 @@
 module.exports = function(grunt) {
 
-    grunt.initConfig({
-        clean: ['dist'],
+  require('jit-grunt')(grunt);
 
-        copy: {
-            development: {
-                files: [{
-                    expand: true,
-                    cwd: 'src',
-                    src: ['**', '!**/scss/**'],
-                    dest: 'dist/'
-                }]
-            }
-        },
+  grunt.initConfig({
+      clean: ['dist'],
 
-        sass: {
-            development: {
-                options: {
-                    sourcemap: 'none',
-                    style: 'compact'
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'src/assets/scss',
-                    src: ['*.scss'],
-                    dest: 'dist/assets/css',
-                    ext: '.css'
-                }]
-            }
-        },
+      copy: {
+          development: {
+              files: [{
+                  expand: true,
+                  cwd: 'src',
+                  src: ['**', '!**/scss/**'],
+                  dest: 'dist/'
+              }]
+          }
+      },
 
-        watch: {
-            www: {
-                files: ['src/**'],
-                tasks: ['copy', 'sass:development']
-            }
-        },
+      sass: {
+          development: {
+              options: {
+                  sourcemap: 'none',
+                  style: 'compact'
+              },
+              files: [{
+                  expand: true,
+                  cwd: 'src/assets/scss',
+                  src: ['*.scss'],
+                  dest: 'dist/assets/css',
+                  ext: '.css'
+              }]
+          }
+      },
 
-        nodemon: {
-            development: {
-                script: 'server.js',
-                options: {
-                    ignore: ['src'],
-                    env: {
-                        'NODE_ENV': 'development'
-                    }
-                }
-            }
-        },
+      watch: {
+          www: {
+              files: ['src/**'],
+              tasks: ['copy', 'sass:development']
+          }
+      },
 
-        concurrent: {
-            development: {
-                tasks: ['watch:www', 'nodemon:development'],
-                options: {
-                    logConcurrentOutput: true
-                }
-            }
-        }
-    });
+      nodemon: {
+          development: {
+              script: 'server.js',
+              options: {
+                  ignore: ['src'],
+                  env: {
+                      'NODE_ENV': 'development'
+                  }
+              }
+          }
+      },
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-nodemon');
-    grunt.loadNpmTasks('grunt-concurrent');
+      concurrent: {
+          development: {
+              tasks: ['watch:www', 'nodemon:development'],
+              options: {
+                  logConcurrentOutput: true
+              }
+          }
+      }
+  });
 
-    grunt.registerTask('serve-app', ['clean', 'copy', 'sass:development', 'concurrent:development']);
-    grunt.registerTask('build-app', ['clean', 'copy', 'sass:development']);
+  grunt.registerTask('serve', ['clean', 'copy', 'sass:development', 'concurrent:development']);
+  grunt.registerTask('build', ['clean', 'copy', 'sass:development']);
 };
