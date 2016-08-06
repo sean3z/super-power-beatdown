@@ -1,1 +1,101 @@
-Hello World
+<!doctype html>
+<html>
+	<head>
+		<title>SUPER POWER BEAT DOWN – We take two super powered legends and make them battle!</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/scss/style.scss" />
+	</head>
+
+	<body>
+		<section class="deck1">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<!-- <img style="width: 150px;" src="assets/img/logo.png" /> -->
+					</div>
+
+					<nav role="navigation" class="col-sm-8">
+						<ul class="nav nav-pills pull-right">
+							<li><a href="#">Episodes</a></li>
+							<li><a href="#">Characters</a></li>
+							<li><a href="#">Merchandise</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
+
+		<section class="deck2">
+			<div class="container">
+				<div class="row">
+					<div class="hidden-xs hidden-sm col-md-5">
+						<img style="width: 100%" src="http://placehold.it/450x460" />
+					</div>
+
+					<div class="col-sm-12 col-md-7">
+						<h2>Super Power Beat Down</h2>
+
+						<p>Welcome to Super Power Beat Down, the show where you debate, discuss and then vote to decide who would win in a legendary battle! We travel to all the biggest conventions and interview the fans to hear who you all think would win! After totaling the online votes, we create an action packed battle for you all to watch!
+						</p>
+
+						<p>The series was co-created by Aaron Schoenke and Sean Schoenke.</p>
+
+						<p style="margin-top: 20px;">
+							<a class="btn btn-primary btn-lg" href="https://www.youtube.com/user/batinthesun">Watch Episodes Now <i class="glyphicon glyphicon-chevron-right"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="deck3">
+			<div class="container">
+				<!-- content -->
+				<div class="row">
+					<!-- content -->
+					<div class="col-sm-12 col-md-7">
+						<div style="border: 1px solid #000;">
+							<img style="width: 100%;" src="assets/img/Episode20.png" />
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-md-5">
+						<h3>WOLVERINE vs WONDER WOMAN</h3>
+
+						<p>The Amazonian princess takes on the animal with a temper in episode 20 of Super Power Beat Down! COMING THIS WINTER!</p>
+
+						<p>VOTING ENDS NOVEMBER 1st.</p>
+
+						<a class="btn btn-primary" href="http://micropoll.com/t/KFi0cZVYVM">Vote Now!</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						Super Power Beat Down &copy; 2016.<br />
+						All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			var e = document.querySelector('.deck1');
+			var i = 'assets/img/11229297_10153982939756632_7057676575328264249_o.jpg';
+			
+			var preload = new Image();
+			preload.src = i;
+
+			setTimeout(function() {
+				e.style.backgroundImage = 'url("'+ i +'")';
+			}, 5000);
+			
+		</script>
+	</body>
+</html>
