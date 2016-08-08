@@ -2,9 +2,36 @@ body {
 	margin: 0; 
 	padding: 0; 
 	height: 100%;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	line-height: 1.5; 
 	overflow-x: hidden;
+}
+
+.nav-pills>li>a, 
+.btn, 
+.btn-group-lg>.btn,
+.btn-lg {
+    border-radius: 0px;
+    text-transform: uppercase;   
+}
+
+a {
+	color: #dd3333;
+}
+
+a:hover {
+	color: #B90000;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #B90000;
+}
+
+.btn {
+	background: #dd3333 !important;
+    border-color: #B90000 !important;
+	font-size: 70%;
 }
 
 .deck1 {
@@ -26,6 +53,8 @@ body {
 /*	background: url('../img/SuperPowerBeatDown.png') no-repeat center 385px;
 	background-size: 60%;*/
 	background-color: #fff;
+	min-height: 300px;
+	height: 450px;
 }
 
 h2 {
@@ -60,5 +89,7 @@ nav {
 @media (max-width: 991px) {
 	.deck3 {
 		background-image: none;
+		height: 75vh;
+		min-height: 550px;
 	}
 }
